@@ -30,7 +30,8 @@ Limitations:
 3. It may not handle large data sets or highly diverse sequence sets as well as more recent algorithms.
 
 
-Steps:
+
+# Steps of ClustalW
 1. Downloaded ClustalW using:
    conda install -c bioconda clustalw
 2. Find the accession number of the sequences from appendix of my paper:     
