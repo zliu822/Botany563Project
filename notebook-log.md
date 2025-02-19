@@ -17,7 +17,6 @@ GenBank Link: https://blast.ncbi.nlm.nih.gov/Blast.cgi#alnHdr_67944442
 
 # Multiple Sequence Alignment Method Chosen
 Clustal W
-
 ClustalW is a widely used multiple sequence alignment algorithm that creates alignments progressively. It starts by computing pairwise alignments to estimate evolutionary distances, constructs a guide tree from those distances, and then aligns sequences step-by-step according to that tree. The method uses biologically informed gap penalties and sequence weights to improve alignment quality. I choose this method because my sequences are all from the same family of Murinae species, which makes the ClustalW an viable option.
 
 Assumptions:
@@ -29,3 +28,19 @@ Limitations:
 1. Errors made early in the progressive alignment process cannot be corrected later.
 2. It struggles with very divergent sequences, as the guide tree might not accurately reflect true evolutionary relationships.
 3. It may not handle large data sets or highly diverse sequence sets as well as more recent algorithms.
+
+
+Steps:
+1. Downloaded ClustalW using:
+   conda install -c bioconda clustalw
+2. Find the accession number of the sequences from appendix of my paper:     
+   https://www.sciencedirect.com/science/article/pii/S1055790305001417
+3. Search the accession number and download the FASTA file from:
+   https://blast.ncbi.nlm.nih.gov/Blast.cgi#alnHdr_67944442
+4. Move the FASTA file to the ClustalW file using command:
+   mv /Users/alanliu/Downloads/DOWNLOADED_FILE /Users/alanliu/miniconda3/pkgs/clustalw-2.1-h4675bf2_12/bin
+5. Find the commands on:
+   http://www.clustal.org/download/clustalw_help.txt
+6. Run the alignment using command:
+   clustalw2 -ALIGN -INFILE=DOWNLOADED_FILE -OUTFILE=OUTPUT_FILE_NAME -OUTPUT=FASTA
+
